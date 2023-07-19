@@ -1,0 +1,22 @@
+
+This is an implementation of an event-driven simulation using a priority queue (Master Event Queue - MEQ)
+
+The code includes the necessary libraries and defines the classes and data structures required for the simulation.
+
+The Event class represents an event with two properties: v (integer value) and t (time the event will be executed).
+
+The Comparator class is a custom comparison function used to order events in the priority queue based on their time t.
+
+A priority_queue named meq is declared, which stores events. It uses the Event class, a vector container, and the Comparator function to order events based on their time.
+
+The processEvent() function is defined to process the top event from meq. It retrieves the top event, calculates the current time (now) based on the system time, and generates a new event e with a randomly generated value v and a time t equal to the sum of now and the value of the top event t.
+
+In the main() function, the simulation starts by initializing the start time and pushing 20 randomly generated events into the meq queue.
+
+The simulation continues by processing 80 additional events using the processEvent() function. Each processed event generates a new event and adds it to the meq queue.
+
+Finally, the code prints the values of the events in the order they are processed, along with a sequentially increasing number i.
+
+The simulation provides a way to model events occurring over time. It demonstrates the concept of event-driven programming and how a priority queue can be used to manage events based on their scheduled execution time. By simulating events and generating new events, the code allows for the evaluation of different scenarios and the examination of event scheduling and ordering.
+
+The printed output displays the sequence of events processed, showing the event number (i), the time of execution (t), and the value of the event (v).
