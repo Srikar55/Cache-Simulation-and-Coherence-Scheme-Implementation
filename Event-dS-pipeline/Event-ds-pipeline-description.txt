@@ -1,0 +1,10 @@
+This is an implementation of a single-threaded event-driven simulator. It simulates the execution of a given code segment and prints the information about each stage of the pipeline, the instruction being processed, data, and clock cycle number. It also prints the contents of the Event List for every clock cycle.
+
+The code simulates a pipeline execution by utilizing a priority queue (meq) to store events. Each event represents an instruction with a specific time (t) and a value (v). The Comparator class is used to order the events in the priority queue based on their time values.
+
+The processEvent function retrieves the top event from the priority queue, calculates the current time, and generates a new event with a random value and an updated time based on the top event's value. This new event is then returned.
+
+In the main function, the simulation begins by initializing the start time (start). Then, a loop is executed 20 times to generate random events and push them into the priority queue. After that, another loop is executed 80 times to process events using the processEvent function and push the resulting events back into the priority queue.
+
+Finally, the code iterates through the priority queue (meq) and prints the information of each event, including the clock cycle number.
+
